@@ -32,7 +32,7 @@
                 background-repeat: no-repeat !important;
             }
             .scroll-animation-section {
-                height: 100vh;
+                height: 200vh;
                 position: relative;
                 margin: 0 !important;
                 padding: 0 !important;
@@ -57,6 +57,11 @@
                 top: 0;
                 left: 0;
                 z-index: 2;
+                will-change: transform;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+                image-rendering: -webkit-optimize-contrast;
+                transition: opacity 0.1s ease-out;
             }
             .hero__overlay {
                 position: absolute;
@@ -67,6 +72,13 @@
                 background: rgba(10, 14, 14, 0.3);
                 z-index: 3;
                 pointer-events: none;
+                will-change: opacity;
+                transition: opacity 0.3s ease-out;
+            }
+            #scroll-hero-content,
+            #scroll-hero-content-2,
+            #scroll-hero-content-3 {
+                transition: opacity 0.5s ease-out;
             }
             .scroll-hint {
                 position: absolute;
@@ -249,16 +261,27 @@
                 });
             }
             
+            // Add lazy loading to all images
+            function addLazyLoading() {
+                const images = document.querySelectorAll('img:not([loading])');
+                images.forEach(img => {
+                    img.loading = 'lazy';
+                });
+            }
+            
             window.addEventListener('load', function() {
                 setTimeout(removeWebflowBadges, 100);
                 setTimeout(removeWebflowBadges, 500);
                 setTimeout(removeWebflowBadges, 1000);
+                addLazyLoading();
             });
             
+            // Add lazy loading immediately for critical images
+            document.addEventListener('DOMContentLoaded', addLazyLoading);
+            
 
-            // Scroll-based animation with scroll-jacking
+            // Optimized scroll-based animation without scroll-jacking
             document.addEventListener('DOMContentLoaded', function() {
-                console.log('DOMContentLoaded - initializing scroll animation');
                 const scrollImage = document.getElementById('scrollImage');
                 const scrollSection = document.querySelector('.scroll-animation-section');
                 const scrollContainer = document.querySelector('.scroll-animation-container');
@@ -266,199 +289,174 @@
                 const scrollHeroContent2 = document.getElementById('scroll-hero-content-2');
                 const scrollHeroContent3 = document.getElementById('scroll-hero-content-3');
                 
-                console.log('scrollImage:', scrollImage);
-                console.log('scrollSection:', scrollSection);
-                console.log('scrollContainer:', scrollContainer);
-                console.log('scrollHeroContent:', scrollHeroContent);
-                console.log('scrollHeroContent2:', scrollHeroContent2);
-                console.log('scrollHeroContent3:', scrollHeroContent3);
-                
                 if (!scrollImage || !scrollSection || !scrollContainer) {
-                    console.error('Scroll animation elements not found');
                     return;
                 }
                 
-                // Frame configuration
+                // Frame configuration with aggressive skipping for better performance
                 const totalFrames = 398;
+                const frameSkip = 10; // Skip every 10th frame for maximum performance
+                const effectiveFrames = Math.floor(totalFrames / frameSkip);
                 const startFrame = 86400;
                 const endFrame = 86797;
-                let currentFrame = 0;
-                let isAnimating = false;
-                let scrollAccumulator = 0;
+                let isReady = false;
                 
-                // Load first frame
+                // Preload frames progressively
+                const frameCache = [];
+                let lastFrameIndex = -1;
+                let ticking = false;
+                let framesLoadedCount = 0;
+                
+                // Load first batch of frames immediately
+                function preloadInitialFrames() {
+                    const initialBatch = 100;
+                    let loaded = 0;
+                    
+                    for (let i = 0; i < Math.min(initialBatch, totalFrames); i++) {
+                        const frameNumber = startFrame + i;
+                        const frameSrc = `frames/Drone_shot_glides_backwards_tran…_202605291748 ${String(frameNumber).padStart(8, '0')}.jpg`;
+                        const img = new Image();
+                        img.src = frameSrc;
+                        
+                        img.onload = function() {
+                            framesLoadedCount++;
+                            if (framesLoadedCount >= 50) { // Ready when 50 frames are loaded
+                                isReady = true;
+                            }
+                        };
+                        
+                        frameCache[i] = img;
+                    }
+                }
+                
+                // Load remaining frames in background
+                function preloadRemainingFrames() {
+                    setTimeout(() => {
+                        const batchSize = 50;
+                        let currentBatch = 100;
+                        
+                        function loadBatch() {
+                            const start = currentBatch;
+                            const end = Math.min(start + batchSize, totalFrames);
+                            
+                            for (let i = start; i < end; i++) {
+                                const frameNumber = startFrame + i;
+                                const frameSrc = `frames/Drone_shot_glides_backwards_tran…_202605291748 ${String(frameNumber).padStart(8, '0')}.jpg`;
+                                const img = new Image();
+                                img.src = frameSrc;
+                                frameCache[i] = img;
+                            }
+                            
+                            currentBatch += batchSize;
+                            if (start < totalFrames) {
+                                requestAnimationFrame(loadBatch);
+                            }
+                        }
+                        
+                        loadBatch();
+                    }, 100);
+                }
+                
+                preloadInitialFrames();
+                preloadRemainingFrames();
+                
+                // Load first frame immediately
                 const initialFrame = `frames/Drone_shot_glides_backwards_tran…_202605291748 ${String(startFrame).padStart(8, '0')}.jpg`;
-                console.log('Loading initial frame:', initialFrame);
                 scrollImage.src = initialFrame;
                 
-                function updateFrame(frameIndex) {
-                    const frameNumber = startFrame + frameIndex;
-                    const frameSrc = `frames/Drone_shot_glides_backwards_tran…_202605291748 ${String(frameNumber).padStart(8, '0')}.jpg`;
-                    
-                    if (scrollImage.src !== frameSrc) {
-                        scrollImage.src = frameSrc;
-                    }
-                }
-                
-                // Fade in/out based on scroll position
-                let isScrollAnimationActive = false;
-                let hasFadedIn = false;
-                const fadeOutFrame = Math.floor(totalFrames * 0.4); // 40% of total frames
-                const secondCardFadeOutFrame = Math.floor(totalFrames * 0.7); // 70% of total frames
-                
-                function updateContentOpacity() {
+                // Calculate frame based on scroll position with frame skipping
+                function getFrameFromScroll() {
                     const rect = scrollSection.getBoundingClientRect();
                     const windowHeight = window.innerHeight;
-                    const sectionTop = rect.top;
+                    const scrollableDistance = rect.height - windowHeight;
                     
-                    // Check if scroll animation is active (section is snapped into view)
-                    const isSectionActive = sectionTop <= 50 && sectionTop >= -50;
+                    if (scrollableDistance <= 0) return 0;
                     
-                    if (isSectionActive && !isScrollAnimationActive) {
-                        // Scroll animation just started - fade in the first card
-                        isScrollAnimationActive = true;
-                        if (scrollHeroContent) {
-                            setTimeout(() => {
-                                scrollHeroContent.style.opacity = 1;
-                                hasFadedIn = true;
-                            }, 500); // 500ms delay before fade-in
-                        }
-                    } else if (!isSectionActive && isScrollAnimationActive) {
-                        // Scroll animation ended - fade out all cards
-                        isScrollAnimationActive = false;
-                        hasFadedIn = false;
-                        if (scrollHeroContent) {
-                            scrollHeroContent.style.opacity = 0;
-                        }
-                        if (scrollHeroContent2) {
-                            scrollHeroContent2.style.opacity = 0;
-                        }
-                        if (scrollHeroContent3) {
-                            scrollHeroContent3.style.opacity = 0;
-                        }
-                    } else if (isSectionActive && hasFadedIn) {
-                        // Animation is active and first card has faded in - check frame position
-                        if (currentFrame >= fadeOutFrame && currentFrame < secondCardFadeOutFrame) {
-                            // Between 40% and 70% - fade out first card, fade in second card
-                            if (scrollHeroContent && scrollHeroContent.style.opacity !== '0') {
-                                scrollHeroContent.style.opacity = 0;
-                            }
-                            if (scrollHeroContent2 && scrollHeroContent2.style.opacity === '0') {
-                                scrollHeroContent2.style.opacity = 1;
-                            }
-                            if (scrollHeroContent3 && scrollHeroContent3.style.opacity !== '0') {
-                                scrollHeroContent3.style.opacity = 0;
-                            }
-                        } else if (currentFrame >= secondCardFadeOutFrame) {
-                            // Reached 70% - fade out second card, fade in third content
-                            if (scrollHeroContent2 && scrollHeroContent2.style.opacity !== '0') {
-                                scrollHeroContent2.style.opacity = 0;
-                            }
-                            if (scrollHeroContent3 && scrollHeroContent3.style.opacity === '0') {
-                                scrollHeroContent3.style.opacity = 1;
-                            }
-                        } else if (currentFrame < fadeOutFrame) {
-                            // Before 40% - fade in first card, fade out second and third
-                            if (scrollHeroContent.style.opacity === '0') {
-                                scrollHeroContent.style.opacity = 1;
-                            }
-                            if (scrollHeroContent2 && scrollHeroContent2.style.opacity !== '0') {
-                                scrollHeroContent2.style.opacity = 0;
-                            }
-                            if (scrollHeroContent3 && scrollHeroContent3.style.opacity !== '0') {
-                                scrollHeroContent3.style.opacity = 0;
-                            }
-                        } else if (currentFrame >= fadeOutFrame && currentFrame < secondCardFadeOutFrame && scrollHeroContent2.style.opacity === '0') {
-                            // Scrolled back to between 40% and 70% - fade in second card again
-                            scrollHeroContent2.style.opacity = 1;
-                        } else if (currentFrame >= secondCardFadeOutFrame && scrollHeroContent3.style.opacity === '0') {
-                            // Scrolled to 70%+ - fade in third content
-                            scrollHeroContent3.style.opacity = 1;
-                        }
-                    }
+                    const scrollProgress = Math.max(0, Math.min(1, -rect.top / scrollableDistance));
+                    const frameIndex = Math.floor(scrollProgress * (effectiveFrames - 1));
+                    return Math.min(frameIndex * frameSkip, totalFrames - 1);
                 }
                 
-                // Scroll-jacking implementation
-                window.addEventListener('wheel', function(e) {
-                    const rect = scrollSection.getBoundingClientRect();
-                    const sectionTop = rect.top;
-                    const windowHeight = window.innerHeight;
-                    
-                    // Update content opacity on scroll
-                    updateContentOpacity();
-                    
-                    // Auto-snap to section when near it (only when scrolling down)
-                    if (sectionTop > 0 && sectionTop < windowHeight * 0.8 && e.deltaY > 0) {
-                        e.preventDefault();
-                        window.scrollTo({
-                            top: window.scrollY + sectionTop,
-                            behavior: 'smooth'
-                        });
+                // Update frame with throttling
+                function updateFrame() {
+                    if (!isReady) {
+                        ticking = false;
                         return;
                     }
                     
-                    // Only activate when section is fully in view (top at or near 0)
-                    if (sectionTop <= 50 && sectionTop >= -50) {
-                        // Check boundaries - allow normal scroll at start/end
-                        const atStart = currentFrame <= 0;
-                        const atEnd = currentFrame >= totalFrames - 1;
-                        
-                        // Allow normal scroll if at boundaries
-                        if ((atStart && e.deltaY < 0) || (atEnd && e.deltaY > 0)) {
-                            return; // Let normal scroll happen
-                        }
-                        
-                        e.preventDefault();
-                        scrollAccumulator += e.deltaY;
-                        
-                        const threshold = 1;
-                        if (Math.abs(scrollAccumulator) >= threshold) {
-                            const direction = Math.sign(scrollAccumulator);
-                            // Change 2 frames per scroll for faster animation
-                            currentFrame = Math.max(0, Math.min(totalFrames - 1, currentFrame + (direction * 2)));
-                            scrollAccumulator = 0;
-                            updateFrame(currentFrame);
-                        }
+                    const frameIndex = getFrameFromScroll();
+                    
+                    if (frameIndex !== lastFrameIndex && frameCache[frameIndex] && frameCache[frameIndex].complete) {
+                        scrollImage.src = frameCache[frameIndex].src;
+                        lastFrameIndex = frameIndex;
                     }
-                }, { passive: false });
+                    
+                    ticking = false;
+                }
                 
-                // Touch support for mobile
-                let touchStartY = 0;
-                window.addEventListener('touchstart', function(e) {
-                    touchStartY = e.touches[0].clientY;
-                });
+                // Simplified scroll handler
+                let lastScrollY = 0;
+                let scrollTimeout;
                 
-                window.addEventListener('touchmove', function(e) {
+                function onScroll() {
+                    const currentScrollY = window.scrollY;
+                    
+                    // Only update if scroll position changed significantly
+                    if (Math.abs(currentScrollY - lastScrollY) < 10) {
+                        return;
+                    }
+                    
+                    lastScrollY = currentScrollY;
+                    
+                    if (!ticking && isReady) {
+                        requestAnimationFrame(updateFrame);
+                        ticking = true;
+                    }
+                    
+                    // Debounce opacity updates
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(updateContentOpacity, 100);
+                }
+                
+                // Use passive scroll listener for better performance
+                window.addEventListener('scroll', onScroll, { passive: true });
+                
+                // Also update on resize
+                window.addEventListener('resize', onScroll, { passive: true });
+                
+                // Content opacity updates (simplified and debounced)
+                function updateContentOpacity() {
                     const rect = scrollSection.getBoundingClientRect();
                     const sectionTop = rect.top;
+                    const isSectionActive = sectionTop <= 100 && sectionTop >= -window.innerHeight + 100;
                     
-                    // Update content opacity on touch
-                    updateContentOpacity();
+                    const frameIndex = getFrameFromScroll();
+                    const fadeOutFrame = Math.floor(effectiveFrames * 0.4);
+                    const secondCardFadeOutFrame = Math.floor(effectiveFrames * 0.7);
                     
-                    // Only activate when section is fully in view (top at or near 0)
-                    if (sectionTop <= 50 && sectionTop >= -50) {
-                        const touchY = e.touches[0].clientY;
-                        const deltaY = touchStartY - touchY;
-                        
-                        const atStart = currentFrame <= 0 && deltaY < 0;
-                        const atEnd = currentFrame >= totalFrames - 1 && deltaY > 0;
-                        
-                        if (!atStart && !atEnd && Math.abs(deltaY) > 5) {
-                            e.preventDefault();
-                            const direction = Math.sign(deltaY);
-                            // Change 2 frames per touch for faster animation
-                            currentFrame = Math.max(0, Math.min(totalFrames - 1, currentFrame + (direction * 2)));
-                            updateFrame(currentFrame);
-                            touchStartY = touchY;
+                    if (isSectionActive) {
+                        if (frameIndex < fadeOutFrame) {
+                            if (scrollHeroContent) scrollHeroContent.style.opacity = 1;
+                            if (scrollHeroContent2) scrollHeroContent2.style.opacity = 0;
+                            if (scrollHeroContent3) scrollHeroContent3.style.opacity = 0;
+                        } else if (frameIndex >= fadeOutFrame && frameIndex < secondCardFadeOutFrame) {
+                            if (scrollHeroContent) scrollHeroContent.style.opacity = 0;
+                            if (scrollHeroContent2) scrollHeroContent2.style.opacity = 1;
+                            if (scrollHeroContent3) scrollHeroContent3.style.opacity = 0;
+                        } else if (frameIndex >= secondCardFadeOutFrame) {
+                            if (scrollHeroContent) scrollHeroContent.style.opacity = 0;
+                            if (scrollHeroContent2) scrollHeroContent2.style.opacity = 0;
+                            if (scrollHeroContent3) scrollHeroContent3.style.opacity = 1;
                         }
+                    } else {
+                        if (scrollHeroContent) scrollHeroContent.style.opacity = 0;
+                        if (scrollHeroContent2) scrollHeroContent2.style.opacity = 0;
+                        if (scrollHeroContent3) scrollHeroContent3.style.opacity = 0;
                     }
-                }, { passive: false });
+                }
                 
                 // Initial opacity check
                 updateContentOpacity();
-                
-                // Update opacity on scroll
-                window.addEventListener('scroll', updateContentOpacity);
             });
         </script>
         <link href="https://fonts.googleapis.com" rel="preconnect"/>

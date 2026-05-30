@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<!-- This site was created in Webflow. https://webflow.com -->
+<!-- Last Published: Thu Jul 17 2025 08:51:48 GMT+0000 (Coordinated Universal Time) -->
+<html data-wf-domain="mirall-128.webflow.io" data-wf-page="683d7e98e0d3f4e5915a5e16" data-wf-site="683d7e98e0d3f4e5915a5def" lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous"/>
+        <title>Mirall - Webflow HTML website template</title>
+        <meta content="Mirall - Webflow HTML website template" property="og:title"/>
+        <meta content="Mirall - Webflow HTML website template" name="twitter:title"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="Webflow" name="generator"/>
+        <link href="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/css/mirall-128.webflow.shared.290dadcfd.css" rel="stylesheet" type="text/css"/>
+        <link href="css" rel="stylesheet" type="text/css"/>
+        <style>
+            .w-webflow-badge, .w-webflow-badge *,
+            [class*="w-webflow"],
+            .w-webflow-badge-container,
+            .webflow-badge {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                position: absolute !important;
+                left: -9999px !important;
+                width: 0 !important;
+                height: 0 !important;
+            }
+            .hero-image {
+                background-image: url('hero-background.jpg') !important;
+                background-size: cover !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+            }
+            .scroll-animation-section {
+                height: 100vh;
+                position: relative;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .scroll-animation-container {
+                position: relative;
+                height: 100vh;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                z-index: 1;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .scroll-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+            }
+            .hero__overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(10, 14, 14, 0.3);
+                z-index: 3;
+                pointer-events: none;
+            }
+            .scroll-hint {
+                position: absolute;
+                bottom: 40px;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+                color: #fff;
+                z-index: 10;
+            }
+            .scroll-hint-text {
+                font-size: 14px;
+                margin-bottom: 10px;
+                opacity: 0.8;
+            }
+            .scroll-indicator {
+                width: 30px;
+                height: 50px;
+                border: 2px solid rgba(255, 255, 255, 0.5);
+                border-radius: 15px;
+                margin: 0 auto;
+                position: relative;
+            }
+            .scroll-indicator::before {
+                content: '';
+                position: absolute;
+                top: 8px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 6px;
+                height: 6px;
+                background: #fff;
+                border-radius: 50%;
+                animation: scrollBounce 2s infinite;
+            }
+            @keyframes scrollBounce {
+                0%, 100% {
+                    opacity: 1;
+                    top: 8px;
+                }
+                50% {
+                    opacity: 0.5;
+                    top: 25px;
+                }
+            }
+            .centered-text-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 10;
+                display: table;
+            }
+            .centered-text {
+                color: white;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                display: table-cell;
+                vertical-align: middle;
+                width: fit-content;
+                max-width: 90%;
+                line-height: 1.2;
+            }
+            @media (max-width: 1024px) {
+                #w-node-scroll-hero-4 {
+                    transform: scale(1) !important;
+                }
+                #scroll-hero-content-2 .card-text {
+                    font-size: 1.2em !important;
+                }
+                #w-node-scroll-hero-row-3 {
+                    bottom: 10% !important;
+                    right: 5% !important;
+                }
+            }
+            @media (max-width: 768px) {
+                #w-node-scroll-hero-4 {
+                    transform: scale(0.8) !important;
+                }
+                #scroll-hero-content-2 .card-text {
+                    font-size: 1em !important;
+                }
+                #w-node-scroll-hero-row-3 {
+                    bottom: 5% !important;
+                    right: 2% !important;
+                }
+                .white-slider-title {
+                    font-size: 1.5em !important;
+                    line-height: 1.1 !important;
+                    word-wrap: break-word !important;
+                    overflow-wrap: break-word !important;
+                    max-width: 100% !important;
+                    padding: 0 10px !important;
+                }
+            }
+            @media (max-width: 479px) {
+                .white-slider-title {
+                    font-size: 1.2em !important;
+                    line-height: 1.1 !important;
+                    word-wrap: break-word !important;
+                    overflow-wrap: break-word !important;
+                    max-width: 100% !important;
+                    padding: 0 10px !important;
+                }
+            }
+            @media (max-width: 1024px) {
+                .white-slider-title {
+                    font-size: 2em !important;
+                    word-wrap: break-word !important;
+                    overflow-wrap: break-word !important;
+                    max-width: 100% !important;
+                }
+                .slider-left-content {
+                    margin-left: 0 !important;
+                    text-align: center !important;
+                }
+                .top-wrap {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                }
+            }
+            @media (max-width: 768px) {
+                .slider-left-content {
+                    margin-left: 0 !important;
+                    text-align: center !important;
+                    padding: 0 20px !important;
+                }
+                .top-wrap {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    width: 100% !important;
+                }
+                .white-slider-title {
+                    font-size: 2.5em !important;
+                    line-height: 1.2 !important;
+                    word-wrap: break-word !important;
+                    overflow-wrap: break-word !important;
+                    max-width: 100% !important;
+                    padding: 0 10px !important;
+                    text-align: center !important;
+                    margin: 0 auto !important;
+                }
+            }
+            @media (max-width: 479px) {
+                .slider-left-content {
+                    margin-left: 0 !important;
+                    text-align: center !important;
+                    padding: 0 15px !important;
+                }
+                .top-wrap {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    width: 100% !important;
+                }
+                .white-slider-title {
+                    font-size: 2.2em !important;
+                    line-height: 1.2 !important;
+                    word-wrap: break-word !important;
+                    overflow-wrap: break-word !important;
+                    max-width: 100% !important;
+                    padding: 0 10px !important;
+                    text-align: center !important;
+                    margin: 0 auto !important;
+                }
+            }
+        </style>
+        <script>
+            function removeWebflowBadges() {
+                var badges = document.querySelectorAll('[class*="w-webflow"], .w-webflow-badge, .webflow-badge, .w-webflow-badge-container');
+                badges.forEach(function(badge) {
+                    badge.remove();
+                });
+            }
+            
+            window.addEventListener('load', function() {
+                setTimeout(removeWebflowBadges, 100);
+                setTimeout(removeWebflowBadges, 500);
+                setTimeout(removeWebflowBadges, 1000);
+            });
+            
+
+            // Scroll-based animation with scroll-jacking
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('DOMContentLoaded - initializing scroll animation');
+                const scrollImage = document.getElementById('scrollImage');
+                const scrollSection = document.querySelector('.scroll-animation-section');
+                const scrollContainer = document.querySelector('.scroll-animation-container');
+                const scrollHeroContent = document.getElementById('scroll-hero-content');
+                const scrollHeroContent2 = document.getElementById('scroll-hero-content-2');
+                const scrollHeroContent3 = document.getElementById('scroll-hero-content-3');
+                
+                console.log('scrollImage:', scrollImage);
+                console.log('scrollSection:', scrollSection);
+                console.log('scrollContainer:', scrollContainer);
+                console.log('scrollHeroContent:', scrollHeroContent);
+                console.log('scrollHeroContent2:', scrollHeroContent2);
+                console.log('scrollHeroContent3:', scrollHeroContent3);
+                
+                if (!scrollImage || !scrollSection || !scrollContainer) {
+                    console.error('Scroll animation elements not found');
+                    return;
+                }
+                
+                // Frame configuration
+                const totalFrames = 398;
+                const startFrame = 86400;
+                const endFrame = 86797;
+                let currentFrame = 0;
+                let isAnimating = false;
+                let scrollAccumulator = 0;
+                
+                // Load first frame
+                const initialFrame = `frames/Drone_shot_glides_backwards_tran…_202605291748 ${String(startFrame).padStart(8, '0')}.jpg`;
+                console.log('Loading initial frame:', initialFrame);
+                scrollImage.src = initialFrame;
+                
+                function updateFrame(frameIndex) {
+                    const frameNumber = startFrame + frameIndex;
+                    const frameSrc = `frames/Drone_shot_glides_backwards_tran…_202605291748 ${String(frameNumber).padStart(8, '0')}.jpg`;
+                    
+                    if (scrollImage.src !== frameSrc) {
+                        scrollImage.src = frameSrc;
+                    }
+                }
+                
+                // Fade in/out based on scroll position
+                let isScrollAnimationActive = false;
+                let hasFadedIn = false;
+                const fadeOutFrame = Math.floor(totalFrames * 0.4); // 40% of total frames
+                const secondCardFadeOutFrame = Math.floor(totalFrames * 0.7); // 70% of total frames
+                
+                function updateContentOpacity() {
+                    const rect = scrollSection.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    const sectionTop = rect.top;
+                    
+                    // Check if scroll animation is active (section is snapped into view)
+                    const isSectionActive = sectionTop <= 50 && sectionTop >= -50;
+                    
+                    if (isSectionActive && !isScrollAnimationActive) {
+                        // Scroll animation just started - fade in the first card
+                        isScrollAnimationActive = true;
+                        if (scrollHeroContent) {
+                            setTimeout(() => {
+                                scrollHeroContent.style.opacity = 1;
+                                hasFadedIn = true;
+                            }, 500); // 500ms delay before fade-in
+                        }
+                    } else if (!isSectionActive && isScrollAnimationActive) {
+                        // Scroll animation ended - fade out all cards
+                        isScrollAnimationActive = false;
+                        hasFadedIn = false;
+                        if (scrollHeroContent) {
+                            scrollHeroContent.style.opacity = 0;
+                        }
+                        if (scrollHeroContent2) {
+                            scrollHeroContent2.style.opacity = 0;
+                        }
+                        if (scrollHeroContent3) {
+                            scrollHeroContent3.style.opacity = 0;
+                        }
+                    } else if (isSectionActive && hasFadedIn) {
+                        // Animation is active and first card has faded in - check frame position
+                        if (currentFrame >= fadeOutFrame && currentFrame < secondCardFadeOutFrame) {
+                            // Between 40% and 70% - fade out first card, fade in second card
+                            if (scrollHeroContent && scrollHeroContent.style.opacity !== '0') {
+                                scrollHeroContent.style.opacity = 0;
+                            }
+                            if (scrollHeroContent2 && scrollHeroContent2.style.opacity === '0') {
+                                scrollHeroContent2.style.opacity = 1;
+                            }
+                            if (scrollHeroContent3 && scrollHeroContent3.style.opacity !== '0') {
+                                scrollHeroContent3.style.opacity = 0;
+                            }
+                        } else if (currentFrame >= secondCardFadeOutFrame) {
+                            // Reached 70% - fade out second card, fade in third content
+                            if (scrollHeroContent2 && scrollHeroContent2.style.opacity !== '0') {
+                                scrollHeroContent2.style.opacity = 0;
+                            }
+                            if (scrollHeroContent3 && scrollHeroContent3.style.opacity === '0') {
+                                scrollHeroContent3.style.opacity = 1;
+                            }
+                        } else if (currentFrame < fadeOutFrame) {
+                            // Before 40% - fade in first card, fade out second and third
+                            if (scrollHeroContent.style.opacity === '0') {
+                                scrollHeroContent.style.opacity = 1;
+                            }
+                            if (scrollHeroContent2 && scrollHeroContent2.style.opacity !== '0') {
+                                scrollHeroContent2.style.opacity = 0;
+                            }
+                            if (scrollHeroContent3 && scrollHeroContent3.style.opacity !== '0') {
+                                scrollHeroContent3.style.opacity = 0;
+                            }
+                        } else if (currentFrame >= fadeOutFrame && currentFrame < secondCardFadeOutFrame && scrollHeroContent2.style.opacity === '0') {
+                            // Scrolled back to between 40% and 70% - fade in second card again
+                            scrollHeroContent2.style.opacity = 1;
+                        } else if (currentFrame >= secondCardFadeOutFrame && scrollHeroContent3.style.opacity === '0') {
+                            // Scrolled to 70%+ - fade in third content
+                            scrollHeroContent3.style.opacity = 1;
+                        }
+                    }
+                }
+                
+                // Scroll-jacking implementation
+                window.addEventListener('wheel', function(e) {
+                    const rect = scrollSection.getBoundingClientRect();
+                    const sectionTop = rect.top;
+                    const windowHeight = window.innerHeight;
+                    
+                    // Update content opacity on scroll
+                    updateContentOpacity();
+                    
+                    // Auto-snap to section when near it (only when scrolling down)
+                    if (sectionTop > 0 && sectionTop < windowHeight * 0.8 && e.deltaY > 0) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: window.scrollY + sectionTop,
+                            behavior: 'smooth'
+                        });
+                        return;
+                    }
+                    
+                    // Only activate when section is fully in view (top at or near 0)
+                    if (sectionTop <= 50 && sectionTop >= -50) {
+                        // Check boundaries - allow normal scroll at start/end
+                        const atStart = currentFrame <= 0;
+                        const atEnd = currentFrame >= totalFrames - 1;
+                        
+                        // Allow normal scroll if at boundaries
+                        if ((atStart && e.deltaY < 0) || (atEnd && e.deltaY > 0)) {
+                            return; // Let normal scroll happen
+                        }
+                        
+                        e.preventDefault();
+                        scrollAccumulator += e.deltaY;
+                        
+                        const threshold = 1;
+                        if (Math.abs(scrollAccumulator) >= threshold) {
+                            const direction = Math.sign(scrollAccumulator);
+                            // Change 2 frames per scroll for faster animation
+                            currentFrame = Math.max(0, Math.min(totalFrames - 1, currentFrame + (direction * 2)));
+                            scrollAccumulator = 0;
+                            updateFrame(currentFrame);
+                        }
+                    }
+                }, { passive: false });
+                
+                // Touch support for mobile
+                let touchStartY = 0;
+                window.addEventListener('touchstart', function(e) {
+                    touchStartY = e.touches[0].clientY;
+                });
+                
+                window.addEventListener('touchmove', function(e) {
+                    const rect = scrollSection.getBoundingClientRect();
+                    const sectionTop = rect.top;
+                    
+                    // Update content opacity on touch
+                    updateContentOpacity();
+                    
+                    // Only activate when section is fully in view (top at or near 0)
+                    if (sectionTop <= 50 && sectionTop >= -50) {
+                        const touchY = e.touches[0].clientY;
+                        const deltaY = touchStartY - touchY;
+                        
+                        const atStart = currentFrame <= 0 && deltaY < 0;
+                        const atEnd = currentFrame >= totalFrames - 1 && deltaY > 0;
+                        
+                        if (!atStart && !atEnd && Math.abs(deltaY) > 5) {
+                            e.preventDefault();
+                            const direction = Math.sign(deltaY);
+                            // Change 2 frames per touch for faster animation
+                            currentFrame = Math.max(0, Math.min(totalFrames - 1, currentFrame + (direction * 2)));
+                            updateFrame(currentFrame);
+                            touchStartY = touchY;
+                        }
+                    }
+                }, { passive: false });
+                
+                // Initial opacity check
+                updateContentOpacity();
+                
+                // Update opacity on scroll
+                window.addEventListener('scroll', updateContentOpacity);
+            });
+        </script>
+        <link href="https://fonts.googleapis.com" rel="preconnect"/>
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            WebFont.load({
+                google: {
+                    families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic", "Instrument Sans:regular,500,600,700,italic,500italic,600italic,700italic"]
+                }
+            });
+        </script>
+        <script type="text/javascript">
+            !function(o, c) {
+                var n = c.documentElement
+                  , t = " w-mod-";
+                n.className += t + "js",
+                ("ontouchstart"in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
+            }(window, document);
+        </script>
+        <link href="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683db9fea03e968c1776713c_Favicon.png" rel="shortcut icon" type="image/x-icon"/>
+        <link href="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683dba023678f090d726e7e8_Webclip.png" rel="apple-touch-icon"/>
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RCSKKYE8VY"></script>
+        <script type="text/javascript">
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('set', 'developer_id.dZGVlNj', true);
+            gtag('js', new Date());
+            gtag('config', 'G-RCSKKYE8VY');
+        </script>
+    </head>
+    <body class="body-bg">
+        <div data-animation="over-left" class="nav-fixed-menu w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1">
+            <div class="nav-bg-cover-2"></div>
+            <div class="nav-hero-container w-container">
+                <div class="menu-item-wrapper-2">
+                    <nav role="navigation" id="w-node-dc8bc540-a2a7-b440-6411-a7911496379e-1496379a" class="nav-menu-wrap w-nav-menu">
+                        <div class="nav-menu-shadow-overlay-4">
+                            <div class="dropdown-menu-3">
+                                <div class="top-tablet-menu-3">
+                                    <div class="border-wrap-4">
+                                        <div data-delay="0" data-hover="true" data-w-id="dc8bc540-a2a7-b440-6411-a791149637a3" class="hero-nav-dropdown-2 w-dropdown">
+                                            <div class="dropdown-header-item-3 w-dropdown-toggle">
+                                                <div class="nav-text-wrap-2">
+                                                    <div class="hero-nav-con-2">
+                                                        <div class="nav-clip">
+                                                            <p class="nav-intro-item">Demos</p>
+                                                        </div>
+                                                        <div class="nav-clip bottom">
+                                                            <p class="nav-intro-item">Demos</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="icon-wrap-2">
+                                                    <div class="nav-cross-wrap-2">
+                                                        <div class="cross-hor-line-2"></div>
+                                                        <div class="cross-vert-line-2"></div>
+                                                    </div>
+                                                    <div class="nav-dropdown-small-icon-2 w-icon-dropdown-toggle"></div>
+                                                </div>
+                                            </div>
+                                            <nav class="nav-dropdown-list-item-3 w-dropdown-list">
+                                                <div class="nav-dropdown-link-wrapper-3">
+                                                    <a href="index.html" aria-current="page" class="full-width-nav-link-2 w--current">
+                                                        <span class="nav-dropdown-link-span-2"></span>
+                                                        Home 1
+                                                    </a>
+                                                </div>
+                                            </nav>
+                                        </div>
+                                        <div data-delay="0" data-hover="true" data-w-id="dc8bc540-a2a7-b440-6411-a791149637c9" class="hero-nav-dropdown-2 w-dropdown">
+                                            <div class="dropdown-header-item-3 w-dropdown-toggle">
+                                                <div class="nav-text-wrap-2">
+                                                    <div class="hero-nav-con-2">
+                                                        <div class="nav-clip">
+                                                            <p class="nav-intro-item">All Pages</p>
+                                                        </div>
+                                                        <div class="nav-clip bottom">
+                                                            <p class="nav-intro-item">All Pages</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="icon-wrap-2">
+                                                    <div class="nav-dropdown-small-icon-2 w-icon-dropdown-toggle"></div>
+                                                    <div class="nav-cross-wrap-2">
+                                                        <div class="cross-hor-line-2"></div>
+                                                        <div class="cross-vert-line-2"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <nav class="nav-dropdown-list-item-3 megamenu w-dropdown-list">
+                                                <div class="megamenu-dropdown-wrapper-4">
+                                                    <div class="megamenu-dropdown-wrap-2">
+                                                        <div class="nav-dropdown-link-wrapper-3">
+                                                            <a href="index.html" aria-current="page" class="full-width-nav-link-2 w--current">
+                                                                <span class="nav-dropdown-link-span-2"></span>
+                                                                Home 1
+                                                            </a>
+                                                            <a href="services.html" class="full-width-nav-link-2">
+                                                                <span class="nav-dropdown-link-span-2"></span>
+                                                                Services
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="megamenu-dropdown-wrap-2">
+                                                        <div class="nav-dropdown-link-wrapper-3">
+                                                            <a href="index.html" class="full-width-nav-link-2">
+                                                                <span class="nav-dropdown-link-span-2"></span>
+                                                                Accomodation
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="megamenu-dropdown-wrap-2">
+                                                        <div class="nav-dropdown-link-wrapper-3">
+                                                            <a href="contact-us.html" class="full-width-nav-link-2">
+                                                                <span class="nav-dropdown-link-span-2"></span>
+                                                                Contact Us
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <a href="index.html" id="w-node-dc8bc540-a2a7-b440-6411-a7911496384c-1496379a" aria-current="page" class="brand-logo w-nav-brand w--current">
+                        <img width="120" height="30" alt="Logo" src="logo.png" class="logo-project"/>
+                    </a>
+                    <div class="menu-button-3 w-nav-button">
+                        <div class="wrapper-item-home-3">
+                            <div class="nav-line-white"></div>
+                            <div class="line-white"></div>
+                        </div>
+                    </div>
+                    <nav role="navigation" id="w-node-dc8bc540-a2a7-b440-6411-a79114963852-1496379a" class="nav-menu-wrap w-nav-menu">
+                        <div class="nav-menu-shadow-overlay-4">
+                            <div class="tablet-menu-4">
+                                <a href="index.html" aria-current="page" class="logo-link-mobile w-nav-brand w--current">
+                                    <img loading="lazy" height="24" alt="Project Photos" src="logo.png" class="logo-project"/>
+                                </a>
+                                <div class="close-menu-button-3 w-nav-button">
+                                    <img width="40" height="40" alt="Icon" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683dc114618d9b0f108588e6_Icon%203.svg" class="nav-close-icon-4"/>
+                                </div>
+                            </div>
+                            <div class="dropdown-hero-menu">
+                                <div class="top-tablet-menu-3">
+                                    <div class="border-wrap-3">
+                                        <div class="tablet-header-wrap">
+                                            <div data-delay="0" data-hover="true" data-w-id="dc8bc540-a2a7-b440-6411-a7911496387a" class="hero-nav-dropdown-2 w-dropdown">
+                                                <div class="dropdown-header-item-3 w-dropdown-toggle">
+                                                    <div class="nav-text-wrap-2">
+                                                        <div class="hero-nav-con-2">
+                                                            <div class="nav-clip">
+                                                                <p class="nav-intro-item">About Us</p>
+                                                            </div>
+                                                            <div class="nav-clip bottom">
+                                                                <p class="nav-intro-item">About Us</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="icon-wrap-2">
+                                                        <div class="nav-cross-wrap-2">
+                                                            <div class="cross-hor-line-2"></div>
+                                                            <div class="cross-vert-line-2"></div>
+                                                        </div>
+                                                        <div class="nav-dropdown-small-icon-2 white w-icon-dropdown-toggle"></div>
+                                                    </div>
+                                                </div>
+                                                <nav class="nav-dropdown-list-item-3 w-dropdown-list">
+                                                    <div class="nav-dropdown-link-wrapper-3">
+                                                        <a href="services.html" class="full-width-nav-link-2">
+                                                            <span class="nav-dropdown-link-span-2"></span>
+                                                            Services
+                                                        </a>
+                                                    </div>
+                                                </nav>
+                                            </div>
+                                            <a href="index.html" class="header-link-color w-inline-block">
+                                                <div class="nav-text-wrap-2">
+                                                    <div class="hero-nav-con-2">
+                                                        <div class="nav-clip">
+                                                            <p class="nav-intro-item">Accomodation</p>
+                                                        </div>
+                                                        <div class="nav-clip bottom">
+                                                            <p class="nav-intro-item">Accomodation</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div data-delay="0" data-hover="true" data-w-id="dc8bc540-a2a7-b440-6411-a791149638b5" class="hero-nav-dropdown-2 w-dropdown">
+                                                <div class="dropdown-header-item-3 w-dropdown-toggle">
+                                                    <div class="nav-text-wrap-2">
+                                                        <div class="hero-nav-con-2">
+                                                            <div class="nav-clip">
+                                                                <p class="nav-intro-item">All Pages</p>
+                                                            </div>
+                                                            <div class="nav-clip bottom">
+                                                                <p class="nav-intro-item">All Pages</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="icon-wrap-2">
+                                                        <div class="nav-dropdown-small-icon-2 white w-icon-dropdown-toggle"></div>
+                                                        <div class="nav-cross-wrap-2">
+                                                            <div class="cross-hor-line-2"></div>
+                                                            <div class="cross-vert-line-2"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <nav class="nav-dropdown-list-item-3 megamenu w-dropdown-list">
+                                                    <div class="megamenu-dropdown-wrapper-4">
+                                                        <div class="megamenu-dropdown-wrap-2">
+                                                            <div class="nav-dropdown-link-wrapper-3">
+                                                                <a href="index.html" aria-current="page" class="full-width-nav-link-2 w--current">
+                                                                    <span class="nav-dropdown-link-span-2"></span>
+                                                                    Home 1
+                                                                </a>
+                                                                <a href="services.html" class="full-width-nav-link-2">
+                                                                    <span class="nav-dropdown-link-span-2"></span>
+                                                                    Services
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="megamenu-dropdown-wrap-2">
+                                                            <div class="nav-dropdown-link-wrapper-3">
+                                                                <a href="index.html" class="full-width-nav-link-2">
+                                                                    <span class="nav-dropdown-link-span-2"></span>
+                                                                    Accomodation
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="megamenu-dropdown-wrap-2">
+                                                            <div class="nav-dropdown-link-wrapper-3">
+                                                                <a href="contact-us.html" class="full-width-nav-link-2">
+                                                                    <span class="nav-dropdown-link-span-2"></span>
+                                                                    Contact Us
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                        <div class="right-nav-menu">
+                                            <div class="no-shrink-wrap">
+                                                <div class="btn-wrapper">
+                                                    <a href="contact-us.html" class="button-link-white w-inline-block">
+                                                        <div class="clip-btn-content">
+                                                            <div class="hover-clip-text">
+                                                                <div class="clip-text">
+                                                                    <div class="btn-text-white">Contact Us</div>
+                                                                </div>
+                                                                <div class="clip-text bottom">
+                                                                    <div class="btn-text-dark">Contact Us</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="no-shrink-wrap">
+                                                <div class="btn-wrapper">
+                                                    <a href="index.html" class="button-link w-inline-block">
+                                                        <div class="arrow-content">
+                                                            <div class="clip-btn-arrow-content">
+                                                                <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683dc78f7306bb1d25568033_Layer%202.svg" loading="lazy" alt="Project Photos" class="btn-icon"/>
+                                                                <div class="hover-clip-text">
+                                                                    <div class="clip-text">
+                                                                        <div class="btn-text-dark">Book Now</div>
+                                                                    </div>
+                                                                    <div class="clip-text bottom">
+                                                                        <div class="btn-text-dark">Book Now</div>
+                                                                    </div>
+                                                                </div>
+                                                                <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683dc78f7306bb1d25568033_Layer%202.svg" loading="lazy" alt="Project Photos" class="btn-icon"/>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="login-tablet-wrap-2">
+                                    <div class="button-hero-wrapper">
+                                        <div class="tablet-btn-group">
+                                            <div class="no-shrink-wrap">
+                                                <div class="btn-wrapper">
+                                                    <a href="contact-us.html" class="button-link-white full-wdth w-inline-block">
+                                                        <div class="clip-btn-content">
+                                                            <div class="hover-clip-text">
+                                                                <div class="clip-text">
+                                                                    <div class="btn-text-white">Contact Us</div>
+                                                                </div>
+                                                                <div class="clip-text bottom">
+                                                                    <div class="btn-text-dark">Contact Us</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="no-shrink-wrap">
+                                                <div class="btn-wrapper">
+                                                    <a href="index.html" class="button-link full-wdth w-inline-block">
+                                                        <div class="arrow-content">
+                                                            <div class="clip-btn-arrow-content">
+                                                                <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683dc78f7306bb1d25568033_Layer%202.svg" loading="lazy" alt="Project Photos" class="btn-icon"/>
+                                                                <div class="hover-clip-text">
+                                                                    <div class="clip-text">
+                                                                        <div class="btn-text-dark">Book Now</div>
+                                                                    </div>
+                                                                    <div class="clip-text bottom">
+                                                                        <div class="btn-text-dark">Book Now</div>
+                                                                    </div>
+                                                                </div>
+                                                                <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683dc78f7306bb1d25568033_Layer%202.svg" loading="lazy" alt="Project Photos" class="btn-icon"/>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="fixed-lines-bg">
+            <div class="lines-grid">
+                <div id="w-node-_8401750c-bba4-6aba-e0bf-59be98ecc018-98ecc016" class="vertical-line">
+                    <div data-w-id="8401750c-bba4-6aba-e0bf-59be98ecc019" class="line-001"></div>
+                </div>
+                <div id="w-node-_8401750c-bba4-6aba-e0bf-59be98ecc01a-98ecc016" class="vertical-line">
+                    <div data-w-id="8401750c-bba4-6aba-e0bf-59be98ecc01b" class="line-002"></div>
+                </div>
+                <div id="w-node-_8401750c-bba4-6aba-e0bf-59be98ecc01c-98ecc016" class="vertical-line">
+                    <div data-w-id="8401750c-bba4-6aba-e0bf-59be98ecc01d" class="line-003"></div>
+                    <div data-w-id="8401750c-bba4-6aba-e0bf-59be98ecc01e" class="line-004"></div>
+                </div>
+            </div>
+        </div>
+        <div class="clip-section">
+            <section data-w-id="b15d2545-3e21-644b-463e-681418969abe" class="banner-01">
+                <div id="w-node-_6f78199c-036e-8d7b-2567-4d91a895b928-915a5e16" class="banner-clip-con">
+                    <div class="base-container">
+                        <div style="opacity:0;-webkit-transform:translate3d(0, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="clip-text-title">
+                            <h1 class="miral-title">Helia</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-photo">
+                    <div class="hero-image"></div>
+                </div>
+                <div class="top-banner-ov"></div>
+                <div id="w-node-_9f31cbf1-6184-5a57-2e9e-2fcd3ba72235-915a5e16" class="relative-banner-content">
+                    <div class="row-001">
+                        <div class="base-container">
+                            <div class="intro-mirall-grid">
+                                <div id="w-node-_8138cd99-b316-281c-c225-5485fcc9675c-915a5e16" class="intro-left">
+                                    <div style="opacity:0" class="location-wrap">
+                                        <a href="https://www.google.com/maps/d/u/0/viewer?ie=UTF8&amp;hl=en&amp;msa=0&amp;z=22&amp;mid=14jEeIQ7yyKK7iih9Sl_AjR7jZf0&amp;ll=51.545544000014644%2C-0.07610839999999452" target="_blank" class="location-link w-inline-block">
+                                            <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683e9c3941c828ba072c5708_Layer_1.svg" loading="lazy" alt="Project Photos" class="location-icon"/>
+                                            <div class="address-text">Helia, Mykonos 846 00, Greece</div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="w-node-da223631-f412-164e-032e-578e9233271e-915a5e16" class="intro-right">
+                                    <div style="opacity:0" class="intro-content">
+                                        <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683e9c395e453550623da8b4_Star%201.svg" loading="lazy" data-w-id="6f6c98d2-aafa-283a-e124-37670e1bdcf0" alt="Project Photos" class="star-icon"/>
+                                        <p class="intro-white-text">At Helia, a seaside sanctuary of minimalist luxury</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="w-node-_86354430-1b9a-3521-70cb-7bd73db4395d-915a5e16" class="row-002">
+                        <div class="base-container">
+                            <div class="card-grid">
+                                <div id="w-node-_1d74865e-0258-67fc-d83e-90184ed0557b-915a5e16" class="card-wrapper">
+                                    <div style="opacity:0;-webkit-transform:translate3d(50px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(50px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(50px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(50px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="card-intro-001">
+                                        <div class="card-01">
+                                            <div class="card-item">
+                                                <p class="card-text">Local stone, sand-treated concrete, and natural wood finishes echo the textures of the shoreline, blurring the line between architecture and.</p>
+                                                <div class="cover-blur"></div>
+                                            </div>
+                                        </div>
+                                        <div style="width:0%" class="vector-wrap-01">
+                                            <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ee9b1146fb15c6a578fa8_Vector%203.webp" loading="lazy" alt="Project Photos" class="vector-png-01"/>
+                                            <div style="opacity:0" class="dots-wrapper">
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="white-dot"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="large-dot"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="w-node-_24f915d7-ec88-0af8-845a-786063d35200-915a5e16" class="row-003">
+                        <div class="base-container">
+                            <div class="card-grid">
+                                <div id="w-node-_24f915d7-ec88-0af8-845a-786063d35208-915a5e16" class="card-wrapper">
+                                    <div style="opacity:0;-webkit-transform:translate3d(-50px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-50px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-50px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-50px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="card-intro-02">
+                                        <div style="width:0%" class="vector-wrap-02">
+                                            <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ee9b1176d0e8dbfa32245_Vector%204.webp" loading="lazy" alt="Project Photos" class="vector-png-02"/>
+                                            <div style="opacity:0" class="dots-wrapper">
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="white-dot"></div>
+                                                <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="large-dot"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card-02">
+                                            <div class="card-item">
+                                                <p class="card-text">The villas were built using a low-impact method that follows the land's natural contours, blending gently into the coastal landscape.</p>
+                                                <div class="cover-blur"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="w-node-_1490dcbf-770b-948e-120a-ec49c1290601-915a5e16" class="row-004">
+                        <div class="base-container">
+                            <div class="socials-banner">
+                                <div style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(24deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(24deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(24deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(24deg) skew(0, 0)" class="intro-social">
+                                    <a href="https://www.facebook.com/" target="_blank" class="social-circle w-inline-block">
+                                        <div class="hover-clip-text">
+                                            <div class="clip-text">
+                                                <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ed2a3b7a8fb89d10aabed_Vector.webp" loading="lazy" alt="Project Photos"/>
+                                            </div>
+                                            <div class="clip-text bottom">
+                                                <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ed2998f73b4cdd4013d63_Vector-1.webp" loading="lazy" alt="Project Photos"/>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(24deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(24deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(24deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(24deg) skew(0, 0)" class="intro-social">
+                                    <a href="https://www.instagram.com/" target="_blank" class="social-circle w-inline-block">
+                                        <div class="hover-clip-text">
+                                            <div class="clip-text">
+                                                <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ed29baddae7e6d91cbb23_Vector-2.webp" loading="lazy" alt="Project Photos"/>
+                                            </div>
+                                            <div class="clip-text bottom">
+                                                <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ed2a07c2a079f88cb5cb6_Vector-3.webp" loading="lazy" alt="Project Photos"/>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(24deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(24deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(24deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(24deg) skew(0, 0)" class="intro-social">
+                                    <a href="https://x.com/" target="_blank" class="social-circle w-inline-block">
+                                        <div class="hover-clip-text">
+                                            <div class="clip-text">
+                                                <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ed2a46b039ea84a9b1bd8_Vector-4.webp" loading="lazy" alt="Project Photos"/>
+                                            </div>
+                                            <div class="clip-text bottom">
+                                                <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ed2a2c453dece9ed59276_Vector-5.webp" loading="lazy" alt="Project Photos"/>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section scroll-animation-section">
+                <div class="scroll-animation-container">
+                    <img id="scrollImage" class="scroll-image" src="" alt=""/>
+                    <div class="hero__overlay"></div>
+                    <div id="scroll-hero-content" class="relative-banner-content" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; opacity: 0; transition: opacity 1.2s ease-in-out;">
+                        <div id="w-node-scroll-hero-row-2" class="row-003">
+                            <div class="base-container">
+                                <div class="card-grid">
+                                    <div id="w-node-scroll-hero-3" class="card-wrapper">
+                                        <div class="card-intro-001">
+                                            <div class="card-01">
+                                                <div class="card-item">
+                                                    <p class="card-text">This direction emphasizes privacy, hidden luxury, and finding a personal sanctuary.</p>
+                                                    <div class="cover-blur"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="scroll-hero-content-2" class="relative-banner-content" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; opacity: 0; transition: opacity 1.2s ease-in-out;">
+                        <div id="w-node-scroll-hero-row-3" class="row-003" style="position: absolute; bottom: 15%; right: 10%;">
+                            <div class="base-container">
+                                <div class="card-grid">
+                                    <div id="w-node-scroll-hero-4" class="card-wrapper" style="transform: scale(1.3);">
+                                        <div class="card-intro-001">
+                                            <div class="card-01">
+                                                <div class="card-item">
+                                                    <p class="card-text" style="font-size: 1.5em;">Experience the ultimate harmony between architecture and nature.</p>
+                                                    <div class="cover-blur"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="scroll-hero-content-3" class="centered-text-container" style="opacity: 0; transition: opacity 1.2s ease-in-out;">
+                        <h2 class="centered-text" style="font-size: 3.5em;">Where<br>Architecture <span style="color: #FFC492;">Blends</span><br>with Nature.</h2>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="base-container">
+                    <div class="about-hotel-wrapper">
+                        <div id="w-node-_8749facc-4c12-6b24-ecaf-5b2ffe2a54d0-915a5e16" class="intro-text-space">
+                            <div class="intro-top-about">
+                                <h6 data-w-id="616fbe69-18a9-679b-405e-ae7e16b8c072" style="opacity:0" class="hero-subtitle">THE CONCEPT</h6>
+                                <h2 data-w-id="30d7a5dd-8481-bcc1-b6f0-345f1abb0e60" style="opacity:0" class="large-white-title">Helia offers quiet beauty and deep stillness — a sanctuary with soul, where refined design lives in harmony with the sea.</h2>
+                            </div>
+                            <div class="intro-bottom-about">
+                                <p data-w-id="1f0822a0-b5e3-13bc-ffa6-298ce303ddce" style="opacity:0" class="paragraph-white">We have a holistic philosophy which translates into creating a harmonious environment, complemented by wellness services that aim to detoxify and rejuvenate your mind, body.</p>
+                                <div data-w-id="8b8467c4-dcc7-7bb3-49ca-386910b2f4fd" style="opacity:0" class="no-shrink-wrap">
+                                    <div class="btn-wrapper">
+                                        <a href="/villas" class="button-link-white white w-inline-block">
+                                            <div class="clip-btn-content">
+                                                <div class="hover-clip-text">
+                                                    <div class="clip-text">
+                                                        <div class="btn-text-dark">Find Out More</div>
+                                                    </div>
+                                                    <div class="clip-text bottom">
+                                                        <div class="btn-text-white">Find Out More</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="tab-grid">
+                <div id="w-node-e176e244-98d9-914b-2b4e-a0b35a998fd1-915a5e16" class="info-slider-left">
+                    <div class="slider-left-content" style="margin-left: 50px;">
+                        <div class="top-wrap">
+                            <h6 data-w-id="b7fcdbd3-d015-1fe5-754e-0003248c3b71" style="opacity: 1;" class="hero-subtitle">EXPERIENCE</h6>
+                            <h2 data-w-id="20dc9feb-db44-f623-ac53-ca5ba0194c50" style="opacity: 1;" class="white-slider-title">Where<br>Time Becomes<br>Memory</h2>
+                        </div>
+                        <div class="intro-bottom-slider">
+                            <p data-w-id="d19cd7dd-7d7b-1b6a-e4c0-4f24ebd51d7b" style="opacity: 1;" class="white-description">Step beyond the suite and indulge in unique experiences designed to elevate your stay — curated to surprise, soothe, and enchant.</p>
+                            <div data-w-id="d19cd7dd-7d7b-1b6a-e4c0-4f24ebd51d7d" style="opacity: 1;" class="no-shrink-wrap">
+                                <div class="btn-wrapper">
+                                    <a href="services.html" class="button-arrow w-inline-block">
+                                        <div class="arrow-content">
+                                            <div class="clip-btn-arrow-content" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683dc78fc0dc63097894ede9_Layer%203.svg" loading="lazy" alt="Project Photos" class="btn-icon">
+                                                <div class="hover-clip-text">
+                                                    <div class="clip-text">
+                                                        <div class="btn-text-white">Discover All</div>
+                                                    </div>
+                                                    <div class="clip-text bottom">
+                                                        <div class="btn-text-dark">Discover All</div>
+                                                    </div>
+                                                </div>
+                                                <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683dc78fc0dc63097894ede9_Layer%203.svg" loading="lazy" alt="Project Photos" class="btn-icon">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="w-node-_0478c1e5-97fb-11ef-e04c-c27882e1244e-915a5e16" class="info-slider-right">
+                    <div data-current="Tab 2" data-easing="ease" data-duration-in="300" data-duration-out="100" class="card-tabs w-tabs">
+                        <div id="w-node-_14a763f0-5ae1-5d28-0086-c16cd189247f-915a5e16" data-w-id="14a763f0-5ae1-5d28-0086-c16cd189247f" style="opacity: 0;" class="nav-tab w-tab-menu" role="tablist">
+                            <a data-w-tab="Tab 1" class="tab-circle w-inline-block w-tab-link" tabindex="-1" id="w-tabs-0-data-w-tab-0" href="#w-tabs-0-data-w-pane-0" role="tab" aria-controls="w-tabs-0-data-w-pane-0" aria-selected="false">
+                                <div></div>
+                            </a>
+                            <a data-w-tab="Tab 2" class="tab-circle w-inline-block w-tab-link w--current" id="w-tabs-0-data-w-tab-1" href="#w-tabs-0-data-w-pane-1" role="tab" aria-controls="w-tabs-0-data-w-pane-1" aria-selected="true">
+                                <div></div>
+                            </a>
+                            <a data-w-tab="Tab 3" class="tab-circle w-inline-block w-tab-link" tabindex="-1" id="w-tabs-0-data-w-tab-2" href="#w-tabs-0-data-w-pane-2" role="tab" aria-controls="w-tabs-0-data-w-pane-2" aria-selected="false">
+                                <div></div>
+                            </a>
+                        </div>
+                        <div id="w-node-_14a763f0-5ae1-5d28-0086-c16cd1892489-915a5e16" class="card-content w-tab-content">
+                            <div data-w-tab="Tab 1" class="tab-pane w-tab-pane" id="w-tabs-0-data-w-pane-0" role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-0">
+                                <div class="all-cards">
+                                    <div class="slide-card">
+                                        <div class="service-card-wrapper w-dyn-list">
+                                            <div role="list" class="card-service w-dyn-items">
+                                                <div role="listitem" class="service-item-card w-dyn-item">
+                                                    <a href="/services/private-dining" class="slider-white-card w-inline-block">
+                                                        <div class="top-slide-image">
+                                                            <div style="background-image: url(&quot;https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/684047f5b6f2effa253b1e5f_Serv-2.jpg&quot;); transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="photo-slide"></div>
+                                                            <div class="slider-ov"></div>
+                                                        </div>
+                                                        <div class="bottom-intro-slide">
+                                                            <div class="service-title-wrap">
+                                                                <h4 class="service-long-title" style="color: rgb(10, 14, 14);">A candlelit culinary escape curated by a private chef beneath the stars.</h4>
+                                                            </div>
+                                                            <div class="short-card-info">
+                                                                <div class="short-info-details">
+                                                                    <div class="info-row">
+                                                                        <p class="short-card-text">Location:</p>
+                                                                        <p class="short-card-text">terrace, dining room</p>
+                                                                    </div>
+                                                                    <div class="info-row">
+                                                                        <p class="short-card-text">Start:</p>
+                                                                        <p class="short-card-text">7.00 pm, 9.00 pm</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-circle-link" style="background-color: rgb(255, 195, 146);">
+                                                                    <div class="hover-clip-arrow">
+                                                                        <div class="clip-rotate-arrow" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                                            <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ef46ba9f1670e9d38b4f9_1.svg" alt="Project Photos" class="rotate-arrow">
+                                                                        </div>
+                                                                        <div class="clip-rotate-arrow top-left" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                                            <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684049e559550c1216b6e845_2.svg" alt="Project Photos" class="rotate-arrow">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slide-card card-02">
+                                        <div class="slider-white-bottom-card">
+                                            <div class="top-slide-image">
+                                                <div class="photo-slide photo-01"></div>
+                                                <div class="slider-ov"></div>
+                                            </div>
+                                            <div class="bottom-intro-slide">
+                                                <div class="service-title-wrap">
+                                                    <h4 class="service-long-title">meditation held just for you in a secluded garden or over water at sunrise.</h4>
+                                                </div>
+                                                <div class="short-card-info">
+                                                    <div class="short-info-details">
+                                                        <div class="info-row">
+                                                            <p class="short-card-text">Location:</p>
+                                                            <p class="short-card-text">lake, park, coast</p>
+                                                        </div>
+                                                        <div class="info-row">
+                                                            <p class="short-card-text">Start:</p>
+                                                            <p class="short-card-text">8.00 am; 10.00 am.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-circle-link">
+                                                        <div class="hover-clip-arrow">
+                                                            <div class="clip-rotate-arrow">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ef46ba9f1670e9d38b4f9_1.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                            <div class="clip-rotate-arrow top-left">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684049e559550c1216b6e845_2.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-light-overlay"></div>
+                                        </div>
+                                    </div>
+                                    <div class="slide-card card-03">
+                                        <div class="slider-white-bottom-card">
+                                            <div class="top-slide-image">
+                                                <div class="photo-slide photo-01"></div>
+                                                <div class="slider-ov"></div>
+                                            </div>
+                                            <div class="bottom-intro-slide">
+                                                <div class="service-title-wrap">
+                                                    <h4 class="service-long-title">meditation held just for you in a secluded garden or over water at sunrise.</h4>
+                                                </div>
+                                                <div class="short-card-info">
+                                                    <div class="short-info-details">
+                                                        <div class="info-row">
+                                                            <p class="short-card-text">Location:</p>
+                                                            <p class="short-card-text">lake, park, coast</p>
+                                                        </div>
+                                                        <div class="info-row">
+                                                            <p class="short-card-text">Start:</p>
+                                                            <p class="short-card-text">8.00 am; 10.00 am.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-circle-link">
+                                                        <div class="hover-clip-arrow">
+                                                            <div class="clip-rotate-arrow">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ef46ba9f1670e9d38b4f9_1.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                            <div class="clip-rotate-arrow top-left">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684049e559550c1216b6e845_2.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-light-overlay"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-w-tab="Tab 2" class="tab-pane w-tab-pane w--tab-active" id="w-tabs-0-data-w-pane-1" role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-1">
+                                <div data-w-id="9ef280a7-1cb3-888e-1223-17acd2853ff8" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="all-cards">
+                                    <div class="slide-card">
+                                        <div class="service-card-wrapper w-dyn-list">
+                                            <div role="list" class="card-service w-dyn-items">
+                                                <div role="listitem" class="service-item-card w-dyn-item">
+                                                    <a href="/services/spa-wellness" class="slider-white-card w-inline-block">
+                                                        <div class="top-slide-image">
+                                                            <div style="background-image: url(&quot;https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/684047b37dae2f48ccd13df9_Serv-1.jpg&quot;); transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="photo-slide"></div>
+                                                            <div class="slider-ov"></div>
+                                                        </div>
+                                                        <div class="bottom-intro-slide">
+                                                            <div class="service-title-wrap">
+                                                                <h4 class="service-long-title" style="color: rgb(10, 14, 14);">Meditation held just for you in a secluded garden or over water at sunrise.</h4>
+                                                            </div>
+                                                            <div class="short-card-info">
+                                                                <div class="short-info-details">
+                                                                    <div class="info-row">
+                                                                        <p class="short-card-text">Location:</p>
+                                                                        <p class="short-card-text">lake, park, coast</p>
+                                                                    </div>
+                                                                    <div class="info-row">
+                                                                        <p class="short-card-text">Start:</p>
+                                                                        <p class="short-card-text">8.00 am; 10.00 am.</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-circle-link" style="background-color: rgb(255, 195, 146);">
+                                                                    <div class="hover-clip-arrow">
+                                                                        <div class="clip-rotate-arrow" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                                            <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ef46ba9f1670e9d38b4f9_1.svg" alt="Project Photos" class="rotate-arrow">
+                                                                        </div>
+                                                                        <div class="clip-rotate-arrow top-left" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                                            <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684049e559550c1216b6e845_2.svg" alt="Project Photos" class="rotate-arrow">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-8deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="slide-card card-02">
+                                        <div class="slider-white-bottom-card">
+                                            <div class="top-slide-image">
+                                                <div class="photo-slide photo-01"></div>
+                                                <div class="slider-ov"></div>
+                                            </div>
+                                            <div class="bottom-intro-slide">
+                                                <div class="service-title-wrap">
+                                                    <h4 class="service-long-title">meditation held just for you in a secluded garden or over water at sunrise.</h4>
+                                                </div>
+                                                <div class="short-card-info">
+                                                    <div class="short-info-details">
+                                                        <div class="info-row">
+                                                            <p class="short-card-text">Location:</p>
+                                                            <p class="short-card-text">lake, park, coast</p>
+                                                        </div>
+                                                        <div class="info-row">
+                                                            <p class="short-card-text">Start:</p>
+                                                            <p class="short-card-text">8.00 am; 10.00 am.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-circle-link">
+                                                        <div class="hover-clip-arrow">
+                                                            <div class="clip-rotate-arrow">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ef46ba9f1670e9d38b4f9_1.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                            <div class="clip-rotate-arrow top-left">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684049e559550c1216b6e845_2.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-light-overlay"></div>
+                                        </div>
+                                    </div>
+                                    <div style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-15deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="slide-card card-03">
+                                        <div class="slider-white-bottom-card">
+                                            <div class="top-slide-image">
+                                                <div class="photo-slide photo-01"></div>
+                                                <div class="slider-ov"></div>
+                                            </div>
+                                            <div class="bottom-intro-slide">
+                                                <div class="service-title-wrap">
+                                                    <h4 class="service-long-title">meditation held just for you in a secluded garden or over water at sunrise.</h4>
+                                                </div>
+                                                <div class="short-card-info">
+                                                    <div class="short-info-details">
+                                                        <div class="info-row">
+                                                            <p class="short-card-text">Location:</p>
+                                                            <p class="short-card-text">lake, park, coast</p>
+                                                        </div>
+                                                        <div class="info-row">
+                                                            <p class="short-card-text">Start:</p>
+                                                            <p class="short-card-text">8.00 am; 10.00 am.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-circle-link">
+                                                        <div class="hover-clip-arrow">
+                                                            <div class="clip-rotate-arrow">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ef46ba9f1670e9d38b4f9_1.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                            <div class="clip-rotate-arrow top-left">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684049e559550c1216b6e845_2.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-light-overlay"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-w-tab="Tab 3" class="tab-pane w-tab-pane" id="w-tabs-0-data-w-pane-2" role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-2">
+                                <div class="all-cards">
+                                    <div class="slide-card">
+                                        <div class="service-card-wrapper w-dyn-list">
+                                            <div role="list" class="card-service w-dyn-items">
+                                                <div role="listitem" class="service-item-card w-dyn-item">
+                                                    <a href="/services/event-space" class="slider-white-card w-inline-block">
+                                                        <div class="top-slide-image">
+                                                            <div style="background-image: url(&quot;https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/684048369175aa2898cdf3de_Serv-6.jpg&quot;); transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="photo-slide"></div>
+                                                            <div class="slider-ov"></div>
+                                                        </div>
+                                                        <div class="bottom-intro-slide">
+                                                            <div class="service-title-wrap">
+                                                                <h4 class="service-long-title" style="color: rgb(10, 14, 14);">Elegant venues for weddings, gatherings, or executive retreats.</h4>
+                                                            </div>
+                                                            <div class="short-card-info">
+                                                                <div class="short-info-details">
+                                                                    <div class="info-row">
+                                                                        <p class="short-card-text">Location:</p>
+                                                                        <p class="short-card-text">lawn, rooftop, beach</p>
+                                                                    </div>
+                                                                    <div class="info-row">
+                                                                        <p class="short-card-text">Start:</p>
+                                                                        <p class="short-card-text">5.00 pm, 7.00 pm</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-circle-link" style="background-color: rgb(255, 195, 146);">
+                                                                    <div class="hover-clip-arrow">
+                                                                        <div class="clip-rotate-arrow" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                                            <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ef46ba9f1670e9d38b4f9_1.svg" alt="Project Photos" class="rotate-arrow">
+                                                                        </div>
+                                                                        <div class="clip-rotate-arrow top-left" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                                            <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684049e559550c1216b6e845_2.svg" alt="Project Photos" class="rotate-arrow">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slide-card card-02">
+                                        <div class="slider-white-bottom-card">
+                                            <div class="top-slide-image">
+                                                <div class="photo-slide photo-01"></div>
+                                                <div class="slider-ov"></div>
+                                            </div>
+                                            <div class="bottom-intro-slide">
+                                                <div class="service-title-wrap">
+                                                    <h4 class="service-long-title">meditation held just for you in a secluded garden or over water at sunrise.</h4>
+                                                </div>
+                                                <div class="short-card-info">
+                                                    <div class="short-info-details">
+                                                        <div class="info-row">
+                                                            <p class="short-card-text">Location:</p>
+                                                            <p class="short-card-text">lake, park, coast</p>
+                                                        </div>
+                                                        <div class="info-row">
+                                                            <p class="short-card-text">Start:</p>
+                                                            <p class="short-card-text">8.00 am; 10.00 am.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-circle-link">
+                                                        <div class="hover-clip-arrow">
+                                                            <div class="clip-rotate-arrow">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ef46ba9f1670e9d38b4f9_1.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                            <div class="clip-rotate-arrow top-left">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684049e559550c1216b6e845_2.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-light-overlay"></div>
+                                        </div>
+                                    </div>
+                                    <div class="slide-card card-03">
+                                        <div class="slider-white-bottom-card">
+                                            <div class="top-slide-image">
+                                                <div class="photo-slide photo-01"></div>
+                                                <div class="slider-ov"></div>
+                                            </div>
+                                            <div class="bottom-intro-slide">
+                                                <div class="service-title-wrap">
+                                                    <h4 class="service-long-title">meditation held just for you in a secluded garden or over water at sunrise.</h4>
+                                                </div>
+                                                <div class="short-card-info">
+                                                    <div class="short-info-details">
+                                                        <div class="info-row">
+                                                            <p class="short-card-text">Location:</p>
+                                                            <p class="short-card-text">lake, park, coast</p>
+                                                        </div>
+                                                        <div class="info-row">
+                                                            <p class="short-card-text">Start:</p>
+                                                            <p class="short-card-text">8.00 am; 10.00 am.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-circle-link">
+                                                        <div class="hover-clip-arrow">
+                                                            <div class="clip-rotate-arrow">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ef46ba9f1670e9d38b4f9_1.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                            <div class="clip-rotate-arrow top-left">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684049e559550c1216b6e845_2.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-light-overlay"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lines-grid">
+                <div id="w-node-_535790ba-fb1e-111f-ebd4-16a32a8f6d79-915a5e16" class="vertical-line">
+                    <div class="line-001" style="width: 1px; height: 100%;"></div>
+                </div>
+                <div id="w-node-_535790ba-fb1e-111f-ebd4-16a32a8f6d7b-915a5e16" class="vertical-line"></div>
+                <div id="w-node-_535790ba-fb1e-111f-ebd4-16a32a8f6d7d-915a5e16" class="vertical-line">
+                    <div data-w-id="535790ba-fb1e-111f-ebd4-16a32a8f6d7f" style="width: 1px; height: 100%;" class="line-004"></div>
+                </div>
+            </div>
+            <div class="base-container" style="margin-top: 80px; margin-bottom: 20px;">
+                <div class="top-title-space">
+                    <div class="form-title-wdth">
+                        <h2 data-w-id="5033d8e2-398c-7c87-7795-c7cb52fb8575" style="opacity: 1;" class="white-form-title">Come as You are And we Will Take Care of the Rest</h2>
+                    </div>
+                </div>
+                <div data-w-id="8556461c-3efd-4fcf-4461-0a5619aabfbd" style="opacity: 1;" class="form-containe-wdth">
+                    <div class="reserve-rest-form w-form">
+                        <form id="email-form" name="email-form" data-name="Email Form" method="get" class="reserve-form" data-wf-page-id="683d7e98e0d3f4e5915a5e16" data-wf-element-id="8e1bac09-08c2-4cfc-a0a1-d3107b1047b0" aria-label="Email Form">
+                            <div class="selector-grid">
+                                <div class="form-selector-item border-left">
+                                    <label for="field" class="form-white-subtitle">Arrival</label>
+                                    <select id="field" name="field" data-name="Field" required="" class="large-form-selector w-select">
+                                        <option value="">30&nbsp;Apr&nbsp;</option>
+                                        <option value="First">03&nbsp;May</option>
+                                        <option value="Second">08&nbsp;May</option>
+                                        <option value="Third">12&nbsp;May</option>
+                                        <option value="Another option">17&nbsp;May</option>
+                                        <option value="Another option">22&nbsp;May</option>
+                                        <option value="Another option">27&nbsp;May</option>
+                                        <option value="Another option">01&nbsp;Jun</option>
+                                        <option value="Another option">05&nbsp;Jun</option>
+                                        <option value="Another option">10&nbsp;Jun</option>
+                                    </select>
+                                </div>
+                                <div class="form-selector-item selector-02">
+                                    <label for="field-4" class="form-white-subtitle">Departure</label>
+                                    <select id="field-4" name="field-4" data-name="Field 4" required="" class="large-form-selector w-select">
+                                        <option value="">04&nbsp;May</option>
+                                        <option value="First">09&nbsp;May</option>
+                                        <option value="Second">13&nbsp;May</option>
+                                        <option value="Third">19&nbsp;May</option>
+                                        <option value="Another option">23&nbsp;May</option>
+                                        <option value="Another option">28&nbsp;May</option>
+                                        <option value="Another option">02&nbsp;Jun</option>
+                                        <option value="Another option">06&nbsp;Jun</option>
+                                        <option value="Another option">11&nbsp;Jun</option>
+                                        <option value="Another option">15&nbsp;Jun</option>
+                                    </select>
+                                </div>
+                                <div class="form-selector-item selector-03">
+                                    <label for="field-3" class="form-white-subtitle">Adult</label>
+                                    <select id="field-3" name="field-3" data-name="Field 3" required="" class="large-form-selector w-select">
+                                        <option value="">1 Adult</option>
+                                        <option value="First">2 Adults</option>
+                                        <option value="Second">3–5 Adults</option>
+                                        <option value="Third">6+ Adults</option>
+                                        <option value="Another option">Group Booking</option>
+                                    </select>
+                                </div>
+                                <div class="form-selector-item selector-04">
+                                    <label for="field-2" class="form-white-subtitle">Children</label>
+                                    <select id="field-2" name="field-2" data-name="Field 2" required="" class="large-form-selector w-select">
+                                        <option value="">1 Child</option>
+                                        <option value="First">2 Children</option>
+                                        <option value="Second">3–4 Children</option>
+                                        <option value="Third">5+ Children</option>
+                                        <option value="Another option">No Children</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <input type="submit" data-wait="Please wait..." class="form-button-white w-button" value="Check Availability">
+                        </form>
+                        <div class="reserve-success-form w-form-done" tabindex="-1" role="region" aria-label="Email Form success">
+                            <div class="success-center-wrap">
+                                <div class="text-success"><span class="span-thank-you">Thank you!</span> Your submission has been received!</div>
+                            </div>
+                        </div>
+                        <div class="error-message w-form-fail" tabindex="-1" role="region" aria-label="Email Form failure">
+                            <div>Oops! Something went wrong while submitting the form.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="base-container">
+                <div class="slider-grid" style="margin-top: 100px;">
+                <div id="w-node-_9afc32a8-3d2c-6355-f5f7-c0162846c3f4-915a5e16" class="info-tab-left">
+                    <div class="container-award">
+                        <div data-w-id="960e96e5-9548-ba4c-0c96-d3716a0668e0" style="opacity: 1;" class="award-item">
+                            <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684037c8bae72fccbf5a33e0_Group%20300.svg" loading="lazy" alt="Project Photos" class="star-icon">
+                            <h3 class="title-award">Michelin 2025</h3>
+                        </div>
+                    </div>
+                    <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="info-tabs w-tabs">
+                        <div data-w-id="d90c0e33-779f-8ec5-a3b7-15b712b97032" style="opacity: 1;" class="tabs-menu w-tab-menu" role="tablist">
+                            <a data-w-tab="Tab 1" class="intro-tab tab-first w-inline-block w-tab-link w--current" id="w-tabs-1-data-w-tab-0" href="#w-tabs-1-data-w-pane-0" role="tab" aria-controls="w-tabs-1-data-w-pane-0" aria-selected="true">
+                                <div>Restaurant</div>
+                            </a>
+                            <a data-w-tab="Tab 2" class="intro-tab w-inline-block w-tab-link" tabindex="-1" id="w-tabs-1-data-w-tab-1" href="#w-tabs-1-data-w-pane-1" role="tab" aria-controls="w-tabs-1-data-w-pane-1" aria-selected="false">
+                                <div>Bar</div>
+                            </a>
+                            <a data-w-tab="Tab 3" class="intro-tab w-inline-block w-tab-link" tabindex="-1" id="w-tabs-1-data-w-tab-2" href="#w-tabs-1-data-w-pane-2" role="tab" aria-controls="w-tabs-1-data-w-pane-2" aria-selected="false">
+                                <div>Terrace</div>
+                            </a>
+                            <a data-w-tab="Tab 4" class="intro-tab w-inline-block w-tab-link" tabindex="-1" id="w-tabs-1-data-w-tab-3" href="#w-tabs-1-data-w-pane-3" role="tab" aria-controls="w-tabs-1-data-w-pane-3" aria-selected="false">
+                                <div>Beach cafe</div>
+                            </a>
+                        </div>
+                        <div data-w-id="d90c0e33-779f-8ec5-a3b7-15b712b9703c" style="opacity: 1;" class="tabs-content w-tab-content">
+                            <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active" id="w-tabs-1-data-w-pane-0" role="tabpanel" aria-labelledby="w-tabs-1-data-w-tab-0">
+                                <div class="tab-link-item">
+                                    <a href="/contact-us" class="tab-card w-inline-block">
+                                        <div class="tab-image-height">
+                                            <div class="tab-service-ov"></div>
+                                            <img sizes="(max-width: 1400px) 100vw, 1400px" srcset="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684889db387f149c70148c88_4%20(1)-p-500.webp 500w, https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684889db387f149c70148c88_4%20(1)-p-800.webp 800w, https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684889db387f149c70148c88_4%20(1)-p-1080.webp 1080w, https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684889db387f149c70148c88_4%20(1).webp 1400w" alt="Project Photos" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684889db387f149c70148c88_4%20(1).webp" loading="lazy" class="photo-tab" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                        </div>
+                                        <div class="bottom-tab-intro">
+                                            <div class="tab-card-info">
+                                                <div class="short-info-details">
+                                                    <div class="info-row">
+                                                        <p class="short-card-text">indoor restaurant</p>
+                                                    </div>
+                                                </div>
+                                                <div class="service-card-intro">
+                                                    <div class="service-title-wrap">
+                                                        <h4 class="service-long-title" style="color: rgb(10, 14, 14);">Garden Open Kitchen is part of the hotel with very rich and delicious menu.</h4>
+                                                    </div>
+                                                    <div class="card-circle-link" style="background-color: rgb(255, 195, 146);">
+                                                        <div class="hover-clip-arrow">
+                                                            <div class="clip-rotate-arrow" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ef46ba9f1670e9d38b4f9_1.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                            <div class="clip-rotate-arrow top-left" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684049e559550c1216b6e845_2.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div data-w-tab="Tab 2" class="w-tab-pane" id="w-tabs-1-data-w-pane-1" role="tabpanel" aria-labelledby="w-tabs-1-data-w-tab-1">
+                                <div class="tab-link-item">
+                                    <a href="/contact-us" class="tab-card w-inline-block">
+                                        <div class="tab-image-height">
+                                            <div class="tab-service-ov"></div>
+                                            <img sizes="100vw" srcset="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/6848029f1a7d52164eb0191f_1-p-500.webp 500w, https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/6848029f1a7d52164eb0191f_1-p-800.webp 800w, https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/6848029f1a7d52164eb0191f_1-p-1080.webp 1080w, https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/6848029f1a7d52164eb0191f_1.webp 1400w" alt="Project Photos" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/6848029f1a7d52164eb0191f_1.webp" loading="lazy" class="photo-tab" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                        </div>
+                                        <div class="bottom-tab-intro">
+                                            <div class="tab-card-info">
+                                                <div class="short-info-details">
+                                                    <div class="info-row">
+                                                        <p class="short-card-text">Cozy Lounge</p>
+                                                    </div>
+                                                </div>
+                                                <div class="service-card-intro">
+                                                    <div class="service-title-wrap">
+                                                        <h4 class="service-long-title" style="color: rgb(10, 14, 14);">Relax with cocktails and a curated wine list in a stylish atmosphere.</h4>
+                                                    </div>
+                                                    <div class="card-circle-link" style="background-color: rgb(255, 195, 146);">
+                                                        <div class="hover-clip-arrow">
+                                                            <div class="clip-rotate-arrow" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ef46ba9f1670e9d38b4f9_1.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                            <div class="clip-rotate-arrow top-left" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684049e559550c1216b6e845_2.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div data-w-tab="Tab 3" class="w-tab-pane" id="w-tabs-1-data-w-pane-2" role="tabpanel" aria-labelledby="w-tabs-1-data-w-tab-2">
+                                <div class="tab-link-item">
+                                    <a href="/contact-us" class="tab-card w-inline-block">
+                                        <div class="tab-image-height">
+                                            <div class="tab-service-ov"></div>
+                                            <img sizes="100vw" srcset="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684802a24d23ca2c25d27553_2-p-500.webp 500w, https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684802a24d23ca2c25d27553_2-p-800.webp 800w, https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684802a24d23ca2c25d27553_2-p-1080.webp 1080w, https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684802a24d23ca2c25d27553_2.webp 1400w" alt="Project Photos" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684802a24d23ca2c25d27553_2.webp" loading="lazy" class="photo-tab" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                        </div>
+                                        <div class="bottom-tab-intro">
+                                            <div class="tab-card-info">
+                                                <div class="short-info-details">
+                                                    <div class="info-row">
+                                                        <p class="short-card-text">Outdoor Dining</p>
+                                                    </div>
+                                                </div>
+                                                <div class="service-card-intro">
+                                                    <div class="service-title-wrap">
+                                                        <h4 class="service-long-title" style="color: rgb(10, 14, 14);">Enjoy seasonal dishes and stunning views from the terrace.</h4>
+                                                    </div>
+                                                    <div class="card-circle-link" style="background-color: rgb(255, 195, 146);">
+                                                        <div class="hover-clip-arrow">
+                                                            <div class="clip-rotate-arrow" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ef46ba9f1670e9d38b4f9_1.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                            <div class="clip-rotate-arrow top-left" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684049e559550c1216b6e845_2.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div data-w-tab="Tab 4" class="w-tab-pane" id="w-tabs-1-data-w-pane-3" role="tabpanel" aria-labelledby="w-tabs-1-data-w-tab-3">
+                                <div class="tab-link-item">
+                                    <a href="/contact-us" class="tab-card w-inline-block">
+                                        <div class="tab-image-height">
+                                            <div class="tab-service-ov"></div>
+                                            <img sizes="100vw" srcset="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/6848027716f06b3a47507bf5_3-p-500.webp 500w, https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/6848027716f06b3a47507bf5_3-p-800.webp 800w, https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/6848027716f06b3a47507bf5_3-p-1080.webp 1080w, https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/6848027716f06b3a47507bf5_3.webp 1400w" alt="Project Photos" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/6848027716f06b3a47507bf5_3.webp" loading="lazy" class="photo-tab" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                        </div>
+                                        <div class="bottom-tab-intro">
+                                            <div class="tab-card-info">
+                                                <div class="short-info-details">
+                                                    <div class="info-row">
+                                                        <p class="short-card-text">Seaside Spot</p>
+                                                    </div>
+                                                </div>
+                                                <div class="service-card-intro">
+                                                    <div class="service-title-wrap">
+                                                        <h4 class="service-long-title" style="color: rgb(10, 14, 14);">Casual bites and drinks served right on the shore with ocean breeze.</h4>
+                                                    </div>
+                                                    <div class="card-circle-link" style="background-color: rgb(255, 195, 146);">
+                                                        <div class="hover-clip-arrow">
+                                                            <div class="clip-rotate-arrow" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683ef46ba9f1670e9d38b4f9_1.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                            <div class="clip-rotate-arrow top-left" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                                <img loading="lazy" src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684049e559550c1216b6e845_2.svg" alt="Project Photos" class="rotate-arrow">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="w-node-_9afc32a8-3d2c-6355-f5f7-c0162846c3dc-915a5e16" class="info-tab-right">
+                    <div class="slider-left-content">
+                        <div class="top-wrap">
+                            <h2 data-w-id="9afc32a8-3d2c-6355-f5f7-c0162846c3e1" style="opacity: 1;" class="white-tab-title">Arrive Freely We'll Handle the Rest</h2>
+                        </div>
+                        <div class="tab-intro-bottom">
+                            <p data-w-id="9afc32a8-3d2c-6355-f5f7-c0162846c3e4" style="opacity: 1;" class="white-tab-description">The Michelin-starred Helia restaurant, created from the ancient lemon house of Villa Baracchi, has an elegant indoor dining room and a striking panoramic terrace that overlooks Cortona and its hills.</p>
+                            <div data-w-id="9afc32a8-3d2c-6355-f5f7-c0162846c3e6" style="opacity: 1;" class="no-shrink-wrap">
+                                <div class="btn-wrapper">
+                                    <a href="/about-us" class="button-arrow w-inline-block">
+                                        <div class="arrow-content">
+                                            <div class="clip-btn-arrow-content" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                                <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683dc78fc0dc63097894ede9_Layer%203.svg" loading="lazy" alt="Project Photos" class="btn-icon">
+                                                <div class="hover-clip-text">
+                                                    <div class="clip-text">
+                                                        <div class="btn-text-white">Read Here</div>
+                                                    </div>
+                                                    <div class="clip-text bottom">
+                                                        <div class="btn-text-dark">Read Here</div>
+                                                    </div>
+                                                </div>
+                                                <img src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/683dc78fc0dc63097894ede9_Layer%203.svg" loading="lazy" alt="Project Photos" class="btn-icon">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <section class="section">
+                <div class="base-container">
+                    <div class="cta-content">
+                        <div class="cta-hero-content">
+                            <div class="cta-intro-top">
+                                <h6 data-w-id="c2e4f4f1-6a85-0583-c3ac-50c748c7d1c0" style="opacity:0" class="hero-subtitle">we are waiting for you</h6>
+                                <h2 data-w-id="c2e4f4f1-6a85-0583-c3ac-50c748c7d1c2" style="opacity:0" class="large-white-title">
+                                    Come Find the Place Your Soul Already Knows — <span class="light-color-span">a Sanctuary Shaped by the Sea and Silence</span>
+                                </h2>
+                            </div>
+                            <div class="intro-bottom-about">
+                                <div data-w-id="c2e4f4f1-6a85-0583-c3ac-50c748c7d1c7" style="opacity:0" class="no-shrink-wrap">
+                                    <div class="btn-wrapper">
+                                        <a href="contact-us.html" class="button-link-white white w-inline-block">
+                                            <div class="clip-btn-content">
+                                                <div class="hover-clip-text">
+                                                    <div class="clip-text">
+                                                        <div class="btn-text-dark">Book Your Stay</div>
+                                                    </div>
+                                                    <div class="clip-text bottom">
+                                                        <div class="btn-text-white">Book Your Stay</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lines-grid">
+                        <div id="w-node-_3a702c60-8993-fcd8-4fe9-b648b35eac1f-b35eac1d" class="vertical-line">
+                            <div class="line-001" style="width: 1px; height: 100%;"></div>
+                        </div>
+                        <div id="w-node-_3a702c60-8993-fcd8-4fe9-b648b35eac21-b35eac1d" class="vertical-line">
+                            <div data-w-id="3a702c60-8993-fcd8-4fe9-b648b35eac22" class="line-002" style="width: 1px; height: 100%;"></div>
+                        </div>
+                        <div id="w-node-_3a702c60-8993-fcd8-4fe9-b648b35eac23-b35eac1d" class="vertical-line">
+                            <div data-w-id="3a702c60-8993-fcd8-4fe9-b648b35eac24" class="line-003" style="width: 1px; height: 100%;"></div>
+                            <div data-w-id="3a702c60-8993-fcd8-4fe9-b648b35eac25" class="line-004" style="width: 1px; height: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="footer">
+                <div class="base-container">
+                    <div class="footer-grid">
+                        <div id="w-node-_5f60f773-39cf-463e-cd12-5ee879da875d-634f2c73" class="footer-info">
+                            <div id="w-node-_305e948f-bb5e-3021-acb4-40ab1cb10478-634f2c73" class="footer-link-wrap">
+                                <div class="link-item">
+                                    <a href="/about-us" class="main-link-wrap w-inline-block">
+                                        <div class="hover-clip-text">
+                                            <div class="clip-text">
+                                                <div class="btn-text-white">About Hotel</div>
+                                            </div>
+                                            <div class="clip-text bottom">
+                                                <div class="btn-text-white">About Hotel</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="link-item">
+                                    <a href="services.html" class="main-link-wrap w-inline-block">
+                                        <div class="hover-clip-text">
+                                            <div class="clip-text">
+                                                <div class="btn-text-white">Services</div>
+                                            </div>
+                                            <div class="clip-text bottom">
+                                                <div class="btn-text-white">Services</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="link-item">
+                                    <a href="/villas" class="main-link-wrap w-inline-block">
+                                        <div class="hover-clip-text">
+                                            <div class="clip-text">
+                                                <div class="btn-text-white">Villas</div>
+                                            </div>
+                                            <div class="clip-text bottom">
+                                                <div class="btn-text-white">Villas</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="w-node-a6d4d9ae-19d6-18eb-84fb-bcdf70ae86ce-634f2c73" class="footer-link-wrap center-rights">
+                                <div data-w-id="daf981fd-9b17-a0fb-7466-2c35634f2ca6" class="footer-copyright">
+                                    © Helia. All Rights Reserved. <a href="/templates/licensing" class="footer-licensing-link">Licensing</a>
+                                </div>
+                            </div>
+                            <div id="w-node-_49c1e782-1e6f-8751-fa49-0a84da0e8104-634f2c73" class="footer-link-wrap center-address">
+                                <div data-w-id="a6aa42d4-9486-7a48-6029-05abcfe94f13" class="footer-address">
+                                    <a href="https://www.google.com/maps/d/u/0/viewer?ie=UTF8&amp;hl=en&amp;msa=0&amp;z=22&amp;mid=14jEeIQ7yyKK7iih9Sl_AjR7jZf0&amp;ll=51.545544000014644%2C-0.07610839999999452" target="_blank" class="our-address">Helia, Mykonos 846 00, Greece</a>
+                                </div>
+                            </div>
+                            <div id="w-node-_3cf8a0f5-1b04-0521-dc17-1ccd47ed88d6-634f2c73" class="footer-link-wrap center">
+                                <div class="link-item">
+                                    <a data-w-id="3cf8a0f5-1b04-0521-dc17-1ccd47ed88d8" href="/about-us" class="main-link-wrap w-inline-block">
+                                        <div class="large-link-number">+01622 330-77-00</div>
+                                    </a>
+                                </div>
+                                <div class="link-item">
+                                    <a data-w-id="631dbf67-fd22-3686-9eff-d92e1f1687e0" href="/about-us" class="main-link-wrap w-inline-block">
+                                        <div class="large-link">info@example.com</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="w-node-e2b2f97b-4616-4cc3-5cea-ac4cdbd60b08-634f2c73" class="footer-link-wrap right">
+                                <div class="link-item">
+                                    <a href="https://www.facebook.com/" target="_blank" class="main-link-wrap w-inline-block">
+                                        <div class="hover-clip-text">
+                                            <div class="clip-text">
+                                                <div class="btn-text-white">facebook</div>
+                                            </div>
+                                            <div class="clip-text bottom">
+                                                <div class="btn-text-white">facebook</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="link-item">
+                                    <a href="https://www.instagram.com/" target="_blank" class="main-link-wrap w-inline-block">
+                                        <div class="hover-clip-text">
+                                            <div class="clip-text">
+                                                <div class="btn-text-white">instagram</div>
+                                            </div>
+                                            <div class="clip-text bottom">
+                                                <div class="btn-text-white">instagram</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="link-item">
+                                    <a href="https://www.pinterest.com/" target="_blank" class="main-link-wrap w-inline-block">
+                                        <div class="hover-clip-text">
+                                            <div class="clip-text">
+                                                <div class="btn-text-white">pinterest</div>
+                                            </div>
+                                            <div class="clip-text bottom">
+                                                <div class="btn-text-white">pinterest</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="w-node-_06743f8e-0610-f6ad-afe8-a2584138419a-634f2c73" class="footer-large-text">
+                            <h2 data-w-id="feaac6c3-f43d-07e0-6d96-5ec520bf2f10" class="miral-title-footer">Helia</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="cover-dark"></div>
+            </div>
+        </div>
+        <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=683d7e98e0d3f4e5915a5def" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/js/webflow.schunk.57d5559d2f0cd9f8.js" type="text/javascript"></script>
+        <script src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/js/webflow.schunk.da075c6258b90d86.js" type="text/javascript"></script>
+        <script src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/js/webflow.schunk.438330566ff1c717.js" type="text/javascript"></script>
+        <script src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/js/webflow.schunk.61b534daaaeddbc7.js" type="text/javascript"></script>
+        <script src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/js/webflow.schunk.121b0d7ff03e0f4a.js" type="text/javascript"></script>
+        <script src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/js/webflow.9368dcd6.80432702368a300c.js" type="text/javascript"></script>
+    </body>
+</html>

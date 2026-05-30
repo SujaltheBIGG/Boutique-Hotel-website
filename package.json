@@ -1,0 +1,8 @@
+{
+  "name": "boutique-hotel-website",
+  "version": "1.0.0",
+  "description": "Boutique hotel website",
+  "scripts": {
+    "dev": "python3 server.py"
+  }
+}
